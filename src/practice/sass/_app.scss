@@ -1,0 +1,102 @@
+@use 'variable' as var;
+
+.test {
+  color: var.$color-text;
+}
+.test {
+  color: var.$color-text;
+}
+
+.inner {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ↓ここに処理を書く↓ */
+$maxWidth: 1000px;
+$brandColor: #cd6799;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: $maxWidth;
+  margin: 0 auto;
+  padding: 10px 0;
+
+  h1 {
+    text-align: left;
+  }
+
+  &__logo {
+    width: 80px;
+  }
+  &__list {
+    display: flex;
+
+    & > li {
+      margin-left: 30px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+    &__link {
+      text-decoration: none;
+      color: #666;
+      font: {
+        size: 16px;
+        weight: bold;
+      }
+
+      &:hover {
+        color: $brandColor;
+      }
+    }
+  }
+}
+
+.footer {
+  padding: 70px 0;
+
+  &__sns {
+    &__list {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      & > li {
+        width: 32%;
+
+        &:nth-child(n+4) {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
+
+@mixin btn($color) {
+  display: block;
+  padding: 20px 30px;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: $color;
+  text: {
+    decoration: none;
+    align: center;
+  }
+}
+
+.footer__sns__btn {
+  @include btn(#4668b3);
+}
