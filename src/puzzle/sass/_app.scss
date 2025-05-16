@@ -1,0 +1,9 @@
+@use 'variable' as var;
+
+$maxWidth: 400px;
+
+.header {
+  max-width: $maxWidth;
+  height: 100px;
+  background-color: var.$navy;
+}
