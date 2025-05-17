@@ -19,3 +19,9 @@ $maxWidth: 400px;
   width: 250px;
   background-color: var.$red;
 }
+
+.footer {
+  height: 100px;
+  width: $maxWidth;
+  background-color: var.$brown;
+}
