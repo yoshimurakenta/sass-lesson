@@ -15,6 +15,9 @@ $maxWidth: 400px;
     .orange_box {
       @include mix.square(#ff863f);
     }
+    .blue_box {
+      @include mix.square(#0000ff);
+    }
   }
 }
 
