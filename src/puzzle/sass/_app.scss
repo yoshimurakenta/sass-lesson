@@ -8,17 +8,21 @@ $maxWidth: 400px;
   background-color: var.$navy;
 }
 
-.sidebar {
-  height: 250px;
-  width: 150px;
-  background-color: var.$green;
-}
+.content {
+  display: flex;
 
-.main {
-  height: 250px;
-  width: 250px;
-  background-color: var.$red;
-}
+  aside {
+    height: 250px;
+    width: 150px;
+    background-color: var.$green;
+    }
+
+    main {
+      height: 250px;
+      width: 250px;
+      background-color: var.$red;
+    }
+  }
 
 .footer {
   height: 100px;
