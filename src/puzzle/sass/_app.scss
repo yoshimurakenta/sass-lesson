@@ -9,8 +9,11 @@ $maxWidth: 400px;
   background-color: var.$navy;
 
   &__inner {
-    .purple_box{
+    .purple_box {
       @include mix.square(#a9004b);
+    }
+    .orange_box {
+      @include mix.square(#ff863f);
     }
   }
 }
