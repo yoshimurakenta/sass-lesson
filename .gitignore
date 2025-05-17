@@ -1,2 +1,8 @@
 node_modules/
+.vscode/
+.env
+.DS_Store
 dist/
+!dist/src/
+!dist/src/puzzle/
+!dist/src/puzzle/**
