@@ -17,19 +17,18 @@ $maxWidth: 400px;
     top: 20px;
     right: 20px;
 
+
+    @each $color in var.$buttonColor {
+      $index_key: index(var.$buttonColor, $color);
+      $class: nth(var.$classNames, $index_key);
+      .#{$class}_box {
+        @include mix.square($color);
+      }
+    }
+
     & > div:last-child{
       margin-right: 0;
     }
-
-      .purple_box {
-        @include mix.square(#a9004b);
-      }
-      .orange_box {
-        @include mix.square(#ff863f);
-      }
-      .blue_box {
-        @include mix.square(#0000ff);
-      }
   }
 }
 
@@ -41,19 +40,27 @@ $maxWidth: 400px;
     background-color: var.$green;
     }
 
-  main {
+  .main {
     height: 250px;
     width: 250px;
     background-color: var.$red;
+    position: relative;
 
-    .purple_main_box {
-      @include mix.rectangle(#a9004b);
-    }
-    .orange_main_box {
-      @include mix.rectangle(#ff863f);
-    }
-    .blue_main_box {
-      @include mix.rectangle(#0000ff);
+    &__inner {
+      position: absolute;
+      top: 40px;
+      left: 40px;
+
+      @each $color in var.$buttonColor {
+        $index_key: index(var.$buttonColor, $color);
+        $class: nth(var.$classNames, $index_key);
+        .#{$class}_main_box {
+          @include mix.rectangle($color);
+        }
+      }
+      & > div:last-child{
+        margin-bottom: 0;
+      }
     }
   }
 }
