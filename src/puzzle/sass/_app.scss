@@ -7,17 +7,29 @@ $maxWidth: 400px;
   max-width: $maxWidth;
   height: 100px;
   background-color: var.$navy;
+  position: relative;
 
   &__inner {
-    .purple_box {
-      @include mix.square(#a9004b);
+    display: flex;
+    padding: 10px;
+    background-color: var.$white;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    & > div:last-child{
+      margin-right: 0;
     }
-    .orange_box {
-      @include mix.square(#ff863f);
-    }
-    .blue_box {
-      @include mix.square(#0000ff);
-    }
+
+      .purple_box {
+        @include mix.square(#a9004b);
+      }
+      .orange_box {
+        @include mix.square(#ff863f);
+      }
+      .blue_box {
+        @include mix.square(#0000ff);
+      }
   }
 }
 
