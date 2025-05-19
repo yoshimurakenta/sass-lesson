@@ -1,0 +1,72 @@
+@use 'variable' as var;
+@use 'mixin' as mix;
+
+$maxWidth: 400px;
+
+.header {
+  max-width: $maxWidth;
+  height: 100px;
+  background-color: var.$navy;
+  position: relative;
+
+  &__inner {
+    display: flex;
+    padding: 10px;
+    background-color: var.$white;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+
+    @each $color in var.$buttonColor {
+      $index_key: index(var.$buttonColor, $color);
+      $class: nth(var.$classNames, $index_key);
+      .#{$class}_box {
+        @include mix.square($color);
+      }
+    }
+
+    & > div:last-child{
+      margin-right: 0;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  aside {
+    height: 250px;
+    width: 150px;
+    background-color: var.$green;
+    }
+
+  .main {
+    height: 250px;
+    width: 250px;
+    background-color: var.$red;
+    position: relative;
+
+    &__inner {
+      position: absolute;
+      top: 40px;
+      left: 40px;
+
+      @each $color in var.$buttonColor {
+        $index_key: index(var.$buttonColor, $color);
+        $class: nth(var.$classNames, $index_key);
+        .#{$class}_main_box {
+          @include mix.rectangle($color);
+        }
+      }
+      & > div:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.footer {
+  height: 100px;
+  width: $maxWidth;
+  background-color: var.$brown;
+}
